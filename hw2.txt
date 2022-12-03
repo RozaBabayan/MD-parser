@@ -1,0 +1,71 @@
+Roza Babayan HW2
+
+Problem 1 - More git Questions (Reference git-scm.com)
+
+Part(a): Unmodified. We will not see any changes of any files since we only examined the clone to local.
+
+Part(b): Both have a status of Untracked. After performing the given steps, we changed some data in the file, but we didn't add it for staging. Therefore we have untracked files. We will see the following message:
+Untracked files
+(use "git add<file>..." to include in what will be committed)
+fun_problem.txt
+README.md
+nothing added to commit but untracked files present (use "git add" to track).
+
+Part (c): With this step we add fun_problem.txt and README to staging area. They both will have a status of Staged.
+The status is:
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+
+    new file:    fun_problem.txt,README.md
+
+Part (d): Both files are modified in the step.The commit command means that we committed changes, but it is not added to staging:
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+       modified:
+       fun_problem.txt
+       README.md    
+no changes added to commit but untracked files present (use "git add"  or "git commit -a").
+    
+
+
+Part (e): In general, git-checkout - switch branches or restore working tree files. In our case we will have modified README.txt (with the updated index)and git checkout -- fun_problem.txt will copy from index to work tree. So before check out this is the only change we have committed, thus as for the content for the fun_problem.txt we will have "Markdown is too easy".
+
+Part (f): After performing the following operation the status of the README.md will be modified.
+
+
+Problem 2 - Makefiles
+Part (a): Every action line in a makefile must start with a: TAB
+
+Part (b):  It allows to type 'make clean' at the
+command line to get rid of the object and executable files. 
+It will call: rm -f *.o *~ shape1 shape2 *~
+After: when we do make shape1 the following will be excecuted: $(CXX) $(CXXFLAGS) $^ -o $@ $(LIBS)
+
+Part(c) For example if we have a file with the name 'clean", make will not run the clean rule since it sees that such file exists. To avoid this issue, we define the clean rule as .PHONY so that the make will see clean as something that is not associated with a file.
+
+Part(d) What are acceptable names for a makefile? Makefile, makefile.
+
+
+Problem 4 - ADTs 
+1. We can use List of strings to store the text of the steps of a recipe. Also we can use Map for example the key can be Step0, Step1, .... and the value can contain the description of every steps of a recipe.
+
+2. We can use set of strings, where we can store keys(TV station identifications).
+
+
+3. We can use a map, where the keys are the team names(no duplicates) and the values are the set of the  strings(where we store the unique names of the players).
+
+4. We can use a map, where the keys are  a file extension (e.g. cpp, pdf) and the values are a list of strings that has the name of the programs. 
+
+
+
+
+
+
+
+
+
